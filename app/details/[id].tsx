@@ -8,11 +8,11 @@ export default function DetailScreen() {
   const { id } = useLocalSearchParams();
   const router = useRouter();
 
-  // Fetch logic with TanStack Query
+  // Fetch logic
   const { data: anime, isLoading, error } = useQuery({
     queryKey: ['animeDetails', id], // Unique Key includes ID
     queryFn: () => getAnimeDetails(id as string), // Pass ID to axios function
-    enabled: !!id, // Only run if ID exists
+    enabled: !!id,
   });
 
   if (isLoading) {
