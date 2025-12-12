@@ -18,7 +18,6 @@ export const getAnimeDetails = async (id: string) => {
   return response.data.data;
 };
 
-// ✅ FIXED SEARCH API
 export const searchAnime = async (query: string) => {
   if (!query || query.trim().length < 3) return [];
 
